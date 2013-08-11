@@ -1,0 +1,181 @@
+\section{Emailverschlüsselung}
+
+\subsection{Wozu braucht man die überhaupt?}
+
+\begin{frame}{Wie funktioniert Email?}
+  \begin{itemize}
+    \item im Grunde eine einfache Textdatei
+      \begin{itemize}
+	\item Metadaten
+	\item Inhalt
+      \end{itemize}
+    \item wird von Server zu Server weitergereicht
+    \item und auf dem Server des Empfängers gespeichert
+    \item Abruf per Browser oder Mailprogramm
+    \item in der Regel bleiben die Mails auf dem Server gespeichert
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Wie funktioniert Email?}
+  \begin{itemize}
+    \item Webmail per Browser ist in der Regel verschlüsselt
+      \begin{itemize}
+	\item HTTPS
+	\item Schlossymbol im Browser
+      \end{itemize}
+    \item Zugriff per Mailprogramm sollte das auch sein
+      \begin{itemize}
+	\item „SSL, immer“
+	\item „TLS, immer“
+      \end{itemize}
+    \item Übertragung zwischen den Servern
+      \begin{itemize}
+	\item leider oft unverschlüsselt
+	\item als Nutzer kaum nachprüfbar
+      \end{itemize}
+  \end{itemize}
+
+  \note{<+FIXXME+>}
+\end{frame}
+
+\begin{frame}{Wie funktioniert Email?}
+  \begin{itemize}
+    \item nicht sicherer als eine Postkarte
+    \item Mails liegen unverschlüsselt auf dem Server des Providers
+    \item Zugriff möglich durch
+      \begin{itemize}
+	\item Angestellte
+	\item Einbrecher (physisch oder über das Netz)
+	\item Strafverfolgungsbehörden
+	\item Geheimdienste
+	\item … oder einfach durch eine Panne
+      \end{itemize}
+  \end{itemize}
+
+  \note{<+FIXXME+>}
+\end{frame}
+
+\subsection{Wie macht man das?}
+
+\begin{frame}{Was kann ich verschlüsseln?}
+  \begin{block}{}
+    Verschlüsseln lässt sich nur der \textbf{Inhalt} der Mail, nicht die
+    Metadaten!
+  \end{block}
+
+  \begin{itemize}
+    \item Absender
+      \begin{itemize}
+	\item Emailadresse
+	\item Anschlusskennung (IP-Adresse)
+      \end{itemize}
+    \item Datum und Uhrzeit
+    \item Empfänger
+  \end{itemize}
+
+  bleiben immer unverschlüsselt.
+
+  \note{<+FIXXME+>}
+\end{frame}
+
+\begin{frame}{OpenPGP}
+  \begin{itemize}
+    \item OpenPGP ist ein freier Standard
+    \item asymetrisches Verschlüsselungsverfahren
+    \item ermöglicht:
+      \begin{itemize}
+	\item Vertraulichkeit (Verschlüsselung)
+	  \begin{itemize}
+	    \item liest jemand mit?
+	  \end{itemize}
+	\item Authentisierung (Signaturen)
+	  \begin{itemize}
+	    \item ist mein Gegenüber der, für den er sich ausgibt?
+	  \end{itemize}
+      \end{itemize}
+  \end{itemize}
+
+  \note{<+FIXXME+>}
+\end{frame}
+
+\begin{frame}{OpenPGP}
+  jeder braucht 2 zusammengehörige Schlüssel:
+  \begin{itemize}
+    \item öffentlicher Schlüssel
+      \begin{itemize}
+	\item wird veröffentlicht oder den Partnern zur Verfügung gestellt
+	\item Verschlüsselung
+	\item Überprüfung einer Signatur
+      \end{itemize}
+    \item geheimer Schlüssel
+      \begin{itemize}
+	\item \textbf{niemals} aus der Hand geben
+	\item Entschlüsselung
+	\item Signatur
+      \end{itemize}
+  \end{itemize}
+
+  \note{<+FIXXME+>}
+\end{frame}
+
+\begin{frame}{Schlüsselerstellung}
+  \begin{itemize}
+    \item man braucht nur einen Namen und eine Emailadresse
+    \item … und das richtige Programm
+    \item öffentlichen Schlüssel bekanntmachen
+      \begin{itemize}
+	\item selbst zum Download anbieten, z.B. auf der eigenen Homepage
+	\item Hochladen auf einen Schlüsselserver
+      \end{itemize}
+  \end{itemize}
+
+  \uncover<2->{Das ist im Grunde alles, was man braucht. Aber:}
+
+  \note{<+FIXXME+>}
+\end{frame}
+
+\begin{frame}{}
+  \begin{alertblock}{Achtung}
+    \textbf{Jeder} kann zu \textbf{beliebigen} Namen und Emailadressen einen
+    Schlüssel erzeugen!
+  \end{alertblock}
+
+  Noch leichter lässt sich in einer Email eine gefälschte Absenderadresse
+  angeben.
+
+  \note{<+FIXXME+>}
+\end{frame}
+
+\begin{frame}{Schlüsselüberprüfung}
+  \begin{itemize}
+    \item jeder Schlüssel hat einen eindeutigen Fingerabdruck
+    \item Austausch des Fingerabdrucks über einen getrennten Kanal
+      \begin{itemize}
+	\item am besten: persönlich
+	\item Telefon
+	\item ganz altmodisch per Brief
+	\item \textbf{nicht} über das Netz
+      \end{itemize}
+  \end{itemize}
+
+  \uncover<2->{Was ist, wenn ich eine Email bekomme, den Schlüssel aber noch
+  nicht kenne?}
+
+  \note{<+FIXXME+>}
+\end{frame}
+
+\begin{frame}{Web of Trust}
+  \begin{itemize}
+    \item Lösung: Web of Trust („Netz des Vertrauens“)
+    \item man „unterschreibt“ überprüfte Schlüssel
+    \item „ich habe überprüft und bestätige, daß die Person die ist, für die sie
+      sich ausgibt“
+    \item hat jemand, den ich überprüft habe, diesen neuen Schlüssel bereits
+      geprüft?
+    \item funktioniert auch rekursiv
+    \item deshalb: \textbf{sorgfältig} prüfen vor dem Unterschreiben eines
+      Schlüssels
+  \end{itemize}
+
+  \note{<+FIXXME+>}
+\end{frame}

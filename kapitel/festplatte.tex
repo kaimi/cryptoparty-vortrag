@@ -1,0 +1,86 @@
+\section{Festplattenverschlüsselung}
+
+\subsection{Wozu braucht man die überhaupt?}
+
+\begin{frame}
+  \begin{itemize}
+    \item Verlust des Geräts / der Festplatte
+      \begin{itemize}
+	\item Notebook verloren
+	\item Einbruch
+      \end{itemize}
+    \item alle unverschlüsselten Daten sind sofort zugreifbar
+      \begin{itemize}[<+->]
+	\item z.B. der OpenPGP-Schlüssel
+	\item oder die Partyfotos vom letzten Wochenende
+	\item oder die Steuererklärung
+	\item … you name it
+      \end{itemize}
+  \end{itemize}
+
+  \note{<+FIXXME+>}
+\end{frame}
+
+\begin{frame}
+  \begin{itemize}
+    \item Lösung: Verschlüsselung der Festplatte
+    \item \textbf{wichtig:} schützt nur zuverlässig, wenn
+      \begin{itemize}
+	\item das Kennwort („Passphrase“) kompliziert genug ist
+	\item das Gerät aus ist, wenn es verloren geht
+	\item Standby schützt nicht!
+      \end{itemize}
+  \end{itemize}
+
+  \note{<+FIXXME+>}
+\end{frame}
+
+\subsection{Wie macht man das?}
+
+\begin{frame}{Linux}
+  \begin{itemize}
+    \item Linux bietet Festplattenverschlüsselung bei der Installation an
+      (LUKS)
+    \item für einzelne Dateien/Ordner: TrueCrypt
+  \end{itemize}
+
+  \note{<+FIXXME+>}
+\end{frame}
+
+\begin{frame}{Mac OS}
+  \begin{itemize}
+    \item Mac OS kann von Haus aus Festplattenverschlüsselung (FileVault)
+    \item nachträgliche Verschlüsselung der Festplatte möglich
+    \item für einzelne Dateien/Ordner: TrueCrypt
+  \end{itemize}
+
+  \note{<+FIXXME+>}
+\end{frame}
+
+\begin{frame}{Windows}
+  \begin{itemize}
+    \item nur manche Varianten können Verschlüsselung von Haus aus (Enterprise,
+      Ultimate)
+    \item Abhilfe schafft TrueCrypt
+    \item nachträgliche Verschlüsselung der Festplatte möglich
+  \end{itemize}
+
+  \note{<+FIXXME+>}
+\end{frame}
+
+\begin{frame}{}
+  \begin{alertblock}{Achtung}
+    \centerline{Mac OS und Windows sind inhärent unsicher!}
+  \end{alertblock}
+
+  \begin{itemize}
+    \item Apple und Microsoft sind amerikanische Unternehmen
+    \item Mac OS und Windows sind proprietär und closed source
+    \item unter Umständen sind Hintertüren für Geheimdienste eingebaut
+  \end{itemize}
+
+  \uncover<2->{\centerline{Wer sicher(er) gehen will, setzt auf ein freies
+  Betriebssystem.}}
+
+  \note{<+FIXXME+>}
+\end{frame}

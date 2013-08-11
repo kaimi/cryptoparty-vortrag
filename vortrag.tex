@@ -1,0 +1,32 @@
+\documentclass[xelatex]{beamer}
+\usepackage[german]{babel}
+\usepackage{xltxtra}
+\usetheme{Warsaw}
+
+\input{config}
+
+\begin{document}
+
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>
+    \frametitle{Übersicht}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+\AtBeginSubsection[]
+{
+  \begin{frame}<beamer>
+    \frametitle{\insertsectionhead}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\input{kapitel}
+
+\end{document}
