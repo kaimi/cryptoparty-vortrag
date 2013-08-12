@@ -20,22 +20,28 @@ TeXlive-Pakete:
 * eu1enc
 * xtlxtra
 
-Aus `vortrag.tex` lassen sich die Folien, aus `notizen.tex` die Notizen für den
-Speaker generieren. Wenn ich irgendwann mal nicht so faul bin, mache ich aus dem
-gammeligen `build.sh` noch mal was ordentliches. In der Zwischenzeit kann ich
+Aus [`vortrag.tex`](https://github.com/kaimi/cryptoparty-vortrag/blob/master/vortrag.tex
+"vortrag.tex") lassen sich die Folien, aus
+[`notizen.tex`](https://github.com/kaimi/cryptoparty-vortrag/blob/master/notizen.tex
+"notizen.tex") die Notizen für den Speaker generieren. Wenn ich irgendwann mal
+nicht so faul bin, mache ich aus dem gammeligen
+[`build.sh`](https://github.com/kaimi/cryptoparty-vortrag/blob/master/build.sh
+"build.sh") noch mal was ordentliches. In der Zwischenzeit kann ich
 [vim-latex](http://vim-latex.sourceforge.net/ "Sourceforge: vim-latex")
 empfehlen.
 
 ### Daten ändern ###
 
-In der Datei `config.tex` lassen sich einige Daten für einen eigenen
-Vortrag überschreiben.
+In der Datei
+[`config.tex`](https://github.com/kaimi/cryptoparty-vortrag/blob/master/config.tex
+"config.tex") lassen sich einige Daten für einen eigenen Vortrag überschreiben.
 
 ### Kapitelauswahl ###
 
-Durch Löschen einzelner Einträge aus `kapitel.tex` lassen sich die
-entsprechenden Abschnitte aus dem generierten PDF ausnehmen. Nicht immer braucht
-man alle Kapitel.
+Durch Löschen einzelner Einträge aus
+[`kapitel.tex`](https://github.com/kaimi/cryptoparty-vortrag/blob/master/kapitel.tex
+"kapitel.tex") lassen sich die entsprechenden Abschnitte aus dem generierten PDF
+ausnehmen. Nicht immer braucht man alle Kapitel.
 
 Neue Kapitel folgen, sobald ich die Muße dazu habe und/oder sie brauche.
 Natürlich nehme ich da auch gerne Contributions an.
