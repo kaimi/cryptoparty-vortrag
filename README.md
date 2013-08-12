@@ -2,6 +2,12 @@
 
 (modularer) Vortrag für Cryptoparties
 
+## PDF-Download ##
+
+Fertige PDFs finden sich unter
+[releases](https://github.com/kaimi/cryptoparty-vortrag/releases
+"cryptoparty-vortrag: releases").
+
 ## selbst kompilieren ##
 
 Voraussetzung für das selbständige Erzeugen der PDF-Folien sind folgende
