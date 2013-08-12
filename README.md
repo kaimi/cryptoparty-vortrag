@@ -18,7 +18,7 @@ TeXlive-Pakete:
 * babel
 * babel-german
 * eu1enc
-* xtlxtra
+* xltxtra
 
 Aus [`vortrag.tex`](https://github.com/kaimi/cryptoparty-vortrag/blob/master/vortrag.tex
 "vortrag.tex") lassen sich die Folien, aus
